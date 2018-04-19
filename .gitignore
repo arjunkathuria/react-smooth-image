@@ -1,0 +1,14 @@
+# ide
+.idea
+.#*
+#*
+.DS_Store
+
+npm-debug*.log
+node_modules
+config.js
+
+# Emacs files
+*~
+\#*\#
+.\#*
