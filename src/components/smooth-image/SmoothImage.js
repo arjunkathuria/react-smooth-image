@@ -11,9 +11,7 @@ const proptypes = {
 };
 
 const defaultProps = {
-  containerStyles: {
-    paddingBottom: "100%"
-  },
+  containerStyles: {},
   transitionTime: 0.3,
   transitionTimingFunction: "ease-in"
 };
@@ -56,6 +54,8 @@ export default class SmoothImage extends React.Component {
             opacity: 0,
             overflow: "hidden",
             backgroundImage: bgImage,
+            // if you do not want square images, overwrite the paddingBottom % by passing from containerStyles
+            paddingBottom: "100%",
             backgroundSize: "cover"
           },
           containerStyles,
