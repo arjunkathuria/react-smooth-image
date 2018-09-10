@@ -1,26 +1,29 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const proptypes = {
   src: PropTypes.string.isRequired,
-  alt: PropTypes.string,
+  alt: PropTypes.string.isRequired,
   placeholderImgUrl: PropTypes.string,
-  containerStyles: PropTypes.object.isRequired,
-  transitionTime: PropTypes.number.isRequired,
-  transitionTimingFunction: PropTypes.string.isRequired
+  containerStyles: PropTypes.object,
+  imageStyles: PropTypes.object,
+  transitionTime: PropTypes.number,
+  transitionTimingFunction: PropTypes.string,
 };
 
 const defaultProps = {
   containerStyles: {},
+  imageStyles: {},
   transitionTime: 0.3,
-  transitionTimingFunction: "ease-in"
+  transitionTimingFunction: 'ease-in',
+  placeholderImgUrl: '',
 };
 
 export default class SmoothImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: {}
+      loaded: {},
     };
 
     this.imageLoadHandler = this.imageLoadHandler.bind(this);
@@ -30,16 +33,22 @@ export default class SmoothImage extends React.Component {
     const { transitionTime, transitionTimingFunction } = this.props;
     this.setState({
       loaded: {
-        opacity: "1",
-        transitionProperty: "opacity",
+        opacity: '1',
+        transitionProperty: 'opacity',
         transitionDuration: `${transitionTime}s`,
-        transitionTimingFunction
-      }
+        transitionTimingFunction,
+      },
     });
   }
 
   render() {
-    const { placeholderImgUrl, containerStyles } = this.props;
+    const {
+      placeholderImgUrl,
+      containerStyles,
+      imageStyles,
+      src,
+      alt,
+    } = this.props;
     const bgImage = placeholderImgUrl && `url(${placeholderImgUrl})`;
     const { loaded } = this.state;
 
@@ -48,29 +57,30 @@ export default class SmoothImage extends React.Component {
         style={Object.assign(
           {},
           {
-            position: "relative",
-            width: "100%",
+            position: 'relative',
+            width: '100%',
             height: 0,
             opacity: 0,
-            overflow: "hidden",
+            overflow: 'hidden',
             backgroundImage: bgImage,
-            // if you do not want square images, overwrite the paddingBottom % by passing from containerStyles
-            paddingBottom: "100%",
-            backgroundSize: "cover"
+            // if you do not want square images, overwrite the paddingBottom % by
+            // passing from containerStyles
+            paddingBottom: '100%',
+            backgroundSize: 'cover',
           },
           containerStyles,
-          loaded
+          loaded,
         )}
       >
         <img
-          src={this.props.src}
-          alt={this.props.alt}
-          style={{
-            position: "absolute",
+          src={src}
+          alt={alt}
+          style={Object.assign({
+            position: 'absolute',
             top: 0,
             left: 0,
-            width: "100%"
-          }}
+            width: '100%',
+          }, imageStyles)}
           onLoad={this.imageLoadHandler}
         />
       </div>
