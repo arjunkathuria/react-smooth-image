@@ -1,8 +1,8 @@
-let webpack = require("webpack");
-let path = require("path");
-let UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+var webpack = require("webpack");
+var path = require("path");
+var UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
-let GLOBALS = {
+var GLOBALS = {
   "process.env": { NODE_ENV: JSON.stringify("production") }
 };
 
@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         include: [path.join(__dirname, "src")],
         exclude: /node_modules/,
         use: "babel-loader"
