@@ -8,11 +8,22 @@ var GLOBALS = {
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, "src/index.js")
+    "react-smooth-image": path.resolve(__dirname, "src/index.js")
   },
   devtool: "source-map",
   target: "web",
   mode: "production",
+  externals: {
+    react: {
+      root: "React",
+      commonjs2: "react",
+      commonjs: "react",
+      amd: "react"
+    }
+  },
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
   module: {
     rules: [
       {
@@ -26,7 +37,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
-    filename: "bundle.js"
+    filename: "[name].js",
+    library: "ReactSmoothImage",
+    libraryTarget: "umd",
+    umdNamedDefine: true
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
