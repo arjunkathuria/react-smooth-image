@@ -1,15 +1,20 @@
 {
   "name": "react-smooth-image",
-  "version": "0.0.1",
-  "description": "Smooth images for react",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Smooth loading non-bouncing images for react that just work",
+  "main": "./dist/react-smooth-image.js",
+  "module": "./src/index.js",
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
-  "keywords": [
+    "keywords": [
+    "reactjs",
     "react",
     "smooth",
-    "image"
+    "image",
+    "image-load",
+    "image-transition",
+    "smooth-loading"
   ],
   "author": "Arjun Kathuria",
   "license": "MIT",
@@ -25,13 +30,13 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "prop-types": "^15.6.1",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.14",
     "yarn": "^1.9.4"
   },
   "dependencies": {
-    "react": "^16.3.2"
+    "prop-types": "^15.6.2",
+    "react": "* || ^16.4.1"
   }
 }
