@@ -18,7 +18,7 @@ Yea, mee too.
 
 ## Demo
 
-First one is a normal image, the second one is using `react-smooth-image`.
+First one is a normal image, the second one is using `react-smooth-image`. (see github for proper example gifs)
 
 ![](./demo/images/meh-react-logo.gif)   ![](./demo/images/smooth-react-logo-3.gif)
 
