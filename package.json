@@ -1,6 +1,6 @@
 {
   "name": "react-smooth-image",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Smooth loading non-bouncing images for react that just work",
   "main": "./dist/react-smooth-image.js",
   "scripts": {
