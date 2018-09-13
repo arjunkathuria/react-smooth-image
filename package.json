@@ -1,6 +1,6 @@
 {
   "name": "react-smooth-image",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Smooth loading non-bouncing images for react that just work",
   "main": "./dist/react-smooth-image.js",
   "scripts": {
@@ -17,6 +17,11 @@
   ],
   "author": "Arjun Kathuria",
   "license": "MIT",
+  "homepage": "https://github.com/arjunkathuria/react-smooth-image",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjunkathuria/react-smooth-image.git"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -35,7 +40,9 @@
     "yarn": "^1.9.4"
   },
   "dependencies": {
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.6.2"
+  },
+  "peerDependencies": {
     "react": "* || ^16.4.1"
   }
 }
