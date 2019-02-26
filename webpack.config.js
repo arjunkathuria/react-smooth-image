@@ -11,7 +11,7 @@ module.exports = {
     "react-smooth-image": path.resolve(__dirname, "src/index.js")
   },
   devtool: "source-map",
-  target: "web",
+  target: "node",
   mode: "production",
   externals: {
     react: {
@@ -39,8 +39,7 @@ module.exports = {
     publicPath: "/",
     filename: "[name].js",
     library: "ReactSmoothImage",
-    libraryTarget: "umd",
-    umdNamedDefine: true
+    libraryTarget: "commonjs2",
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
