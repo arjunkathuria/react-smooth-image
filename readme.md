@@ -37,7 +37,7 @@ $ yarn add react-smooth-image
 ## Usage
 
 ````js
-import SmoothImage from 'react-smooth image';
+import SmoothImage from 'react-smooth-image';
 .
 .
 .
